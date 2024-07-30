@@ -51,3 +51,4 @@ urllib3==2.2.2
 # wcwidth @ file:///home/conda/feedstock_root/build_artifacts/wcwidth_1704731205417/work
 # zipp @ file:///home/conda/feedstock_root/build_artifacts/zipp_1718013267051/work
 -e .
+python-box==6.0.2
