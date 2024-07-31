@@ -3,27 +3,24 @@ artifacts_root: artifacts
 
 data_ingestion:
   root_dir: artifacts/data_ingestion
-  # source_URL: https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia
-  # source_URL: https://docs.google.com/uc?export=download&id=1e4liohQQtuqqh2Z1i8kavxJEwmLe_F5t
-  # source_URL: https://drive.google.com/file/d/1e4liohQQtuqqh2Z1i8kavxJEwmLe_F5t/view?usp=sharing
-  # local_data_file: artifacts/data_ingestion/
-  # unzip_dir: artifacts/data_ingestion
-# "D:\projects\Pneumonia-Classification-Project\artifacts\data_ingestion\chest-xray-pneumonia\chest_xray\test"
+  source_URL: https://github.com/Suvojeet-Haldar/data/raw/main/MasterDictionary-20240731T055414Z-001.zip
+  local_data_file: artifacts/data_ingestion/data.zip
+  unzip_dir: artifacts/data_ingestion
 
-prepare_base_model:
-  root_dir: artifacts/prepare_base_model
-  base_model_path: artifacts/prepare_base_model/base_model.h5
-  updated_base_model_path: artifacts/prepare_base_model/base_model_updated.h5
+# prepare_base_model:
+#   root_dir: artifacts/prepare_base_model
+#   base_model_path: artifacts/prepare_base_model/base_model.h5
+#   updated_base_model_path: artifacts/prepare_base_model/base_model_updated.h5
 
 
-prepare_callbacks:
-  root_dir: artifacts/prepare_callbacks
-  tensorboard_root_log_dir: artifacts/prepare_callbacks/tensorboard_log_dir
-  checkpoint_model_filepath: artifacts/prepare_callbacks/checkpoint_dir/model.h5
+# prepare_callbacks:
+#   root_dir: artifacts/prepare_callbacks
+#   tensorboard_root_log_dir: artifacts/prepare_callbacks/tensorboard_log_dir
+#   checkpoint_model_filepath: artifacts/prepare_callbacks/checkpoint_dir/model.h5
 
 
 
 
-training:
-  root_dir: artifacts/training
-  trained_model_path: artifacts/training/model.h5
+# training:
+#   root_dir: artifacts/training
+#   trained_model_path: artifacts/training/model.h5

@@ -2,7 +2,9 @@ from flask import Flask, render_template, request
 import os
 import numpy as np
 import pandas as pd
-from src.DataExtractionAndNLP.pipeline.dataIngestion import DataIngestionPipeline
+from DataExtractionAndNLP.pipeline.stage_01_data_ingestion import DataIngestionPipeline
+from src.DataExtractionAndNLP.pipeline.dataCleaning import DataCleaningPipeline
+from src.DataExtractionAndNLP.pipeline.preCleaning import PreCleaningPipeline
 
 
 app = Flask(__name__) # initializing a flask app
@@ -39,7 +41,11 @@ def index():
             data = [url, Class]
             # data = np.array(data).reshape(1, 2)
 
-            obj = DataIngestionPipeline()
+            DataIngestionPipeline().ingest(data)
+            metrics = PreCleaningPipeline().calculate(data)
+            DataCleaningPipeline().clean(data, metrics)
+
+            # obj = DataIngestionPipeline()
             predict = obj.ingest(data)
 
             return render_template('results.html', prediction =str(predict))
