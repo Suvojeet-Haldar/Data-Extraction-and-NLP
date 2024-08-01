@@ -1,9 +1,5 @@
-# import joblib
-# import numpy as np
-# import pandas as pd
-# from pathlib import Path
 from src.DataExtractionAndNLP.config.configuration import ConfigurationManager
-from src.DataExtractionAndNLP.components.preCleaning import PreCleaning
+from src.DataExtractionAndNLP.components.pre_cleaning import PreCleaning
 from src.DataExtractionAndNLP import logger
 
 STAGE_NAME = "Pre Cleaning stage"
@@ -13,12 +9,10 @@ class PreCleaningPipeline:
     def __init__(self):
         pass
 
-
-    def calculate(self, data):
-        # prediction = self.model.predict(data)
+    def main(self, data):
         config = ConfigurationManager()
-        pre_cleaning_config = config.get_pre_cleaning_config()
-        pre_cleaning = PreCleaning(config=pre_cleaning_config)
+        data_ingestion_config = config.get_data_ingestion_config()
+        pre_cleaning = PreCleaning(config=data_ingestion_config)
         metrics = pre_cleaning.calculate(data)
 
         return metrics

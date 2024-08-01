@@ -1,6 +1,6 @@
 from src.DataExtractionAndNLP.constants import *
 from src.DataExtractionAndNLP.utils.common import read_yaml, create_directories
-from src.DataExtractionAndNLP.entity.config_entity import (DataIngestionConfig, DataCleaningConfig, PreCleaningConfig)
+from src.DataExtractionAndNLP.entity.config_entity import (DataIngestionConfig, DataCleaningConfig)
 
 class ConfigurationManager:
     def __init__(
@@ -26,7 +26,8 @@ class ConfigurationManager:
             root_dir=config.root_dir,
             source_URL=config.source_URL,
             local_data_file=config.local_data_file,
-            unzip_dir=config.unzip_dir 
+            unzip_dir=config.unzip_dir ,
+            unzip_data_dir=config.unzip_data_dir
         )
 
         return data_ingestion_config
@@ -46,21 +47,6 @@ class ConfigurationManager:
         )
 
         return data_cleaning_config
-    
-
-
-
-    def get_pre_cleaning_config(self) -> PreCleaningConfig:
-        config = self.config.data_transformation
-
-        # create_directories([config.root_dir])
-
-        pre_cleaning_config = PreCleaningConfig(
-            root_dir=config.root_dir
-            # data_path=config.data_path,
-        )
-
-        return pre_cleaning_config
     
 
 

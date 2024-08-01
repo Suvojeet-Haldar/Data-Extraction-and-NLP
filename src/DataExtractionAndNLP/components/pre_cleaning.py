@@ -1,28 +1,29 @@
-# import os
-# import urllib.request as request
-# import zipfile
-# from src.DataExtractionAndNLP import logger
-# from src.DataExtractionAndNLP.utils.common import get_size
-# from pathlib import Path
-from src.DataExtractionAndNLP.entity.config_entity import (DataCleaningConfig)
-# import requests
-# from bs4 import BeautifulSoup
-from nltk.corpus import stopwords
+import os
+from src.DataExtractionAndNLP import logger
 from nltk.tokenize import sent_tokenize, word_tokenize
-import re
 from nltk.corpus import cmudict
-
+import re
+from src.DataExtractionAndNLP.entity.config_entity import (DataIngestionConfig)
 
 
 
 
 
 class PreCleaning:
-    def __init__(self, config: DataCleaningConfig):
+    def __init__(self, config: DataIngestionConfig):
         self.config = config
 
     def calculate(self, data):
-        with open(f'../../../artifacts/data_ingestion/{data[0]}_{data[1]}.txt', 'r', encoding='utf-8') as file:
+        url=data[0]
+        Class_type=data[1]
+        Class_name=data[2]
+        
+        sanitized_url = url.replace("/", "_").replace(":", "_")  # Sanitize URL
+        filename = f"{sanitized_url}_{Class_type}_{Class_name}.txt"
+
+        output_file = os.path.join(self.config.root_dir, filename)
+
+        with open(output_file, 'r', encoding='utf-8') as file:
             text = file.read()
 
             # Function to calculate average word length
@@ -69,6 +70,7 @@ class PreCleaning:
             personal_pronouns_count+=len(re.findall(r'\b(us|Us|uS)\b', text))
             avg_word_length = average_word_length(text)
 
-            metrics=[avg_sentence_length, complex_word_count, syllable_count, personal_pronouns_count, avg_word_length]
+            metrics={"avg_sentence_length":avg_sentence_length, "complex_word_count":complex_word_count, "syllable_count":syllable_count, "personal_pronouns_count":personal_pronouns_count, "avg_word_length":avg_word_length}
 
             return metrics
+    

@@ -1,7 +1,3 @@
-# import joblib
-# import numpy as np
-# import pandas as pd
-# from pathlib import Path
 from src.DataExtractionAndNLP.config.configuration import ConfigurationManager
 from src.DataExtractionAndNLP.components.data_ingestion import DataIngestion
 from src.DataExtractionAndNLP import logger

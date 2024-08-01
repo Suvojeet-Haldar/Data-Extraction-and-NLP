@@ -8,7 +8,7 @@ class DataIngestionConfig:
     source_URL: str
     local_data_file: Path
     unzip_dir: Path
-
+    unzip_data_dir: Path
 
 
 @dataclass(frozen=True)
@@ -18,12 +18,6 @@ class DataCleaningConfig:
     # unzip_data_dir: Path
     # all_schema: dict
 
-
-
-@dataclass(frozen=True)
-class PreCleaningConfig:
-    root_dir: Path
-    # data_path: Path
 
 
 

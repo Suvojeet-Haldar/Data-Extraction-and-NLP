@@ -21,8 +21,8 @@ class DataIngestion:
                 filename= self.config.local_data_file
             )
             logger.info(f"{filename} download! with following info: \n{headers}")
-        else:
-            logger.info(f"File already exists of size: {get_size(Path(self.config.local_data_file))}")
+        # else:
+        #     logger.info(f"File already exists of size: {get_size(Path(self.config.local_data_file))}")
 
 
 
@@ -35,9 +35,14 @@ class DataIngestion:
         """
 
         unzip_path = self.config.unzip_dir
+        unzip_data_dir_path = self.config.unzip_data_dir
         os.makedirs(unzip_path, exist_ok=True)
-        with zipfile.ZipFile(self.config.local_data_file, 'r') as zip_ref:
-            zip_ref.extractall(unzip_path)
+        # Check if the target file already exists
+        if not os.path.exists(unzip_data_dir_path):
+            with zipfile.ZipFile(self.config.local_data_file, 'r') as zip_ref:
+                zip_ref.extractall(unzip_path)
+        # else:
+        #     logger.info(f"Directory already exists")
 
     def extraction(self, data):
         try:
