@@ -11,14 +11,6 @@ class DataIngestionConfig:
     unzip_data_dir: Path
 
 
-@dataclass(frozen=True)
-class DataCleaningConfig:
-    root_dir: Path
-    # STATUS_FILE: str
-    # unzip_data_dir: Path
-    # all_schema: dict
-
-
 
 
 # @dataclass(frozen=True)

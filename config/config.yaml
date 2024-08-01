@@ -9,11 +9,6 @@ data_ingestion:
   unzip_data_dir: artifacts/data_ingestion/MasterDictionary
 
 
-post_cleaning:
-  source_dir: artifacts/data_ingestion/MasterDictionary
-  # STATUS_FILE: artifacts/data_validation/status.txt
-
-
 # data_transformation:
 #   root_dir: artifacts/data_transformation
 #   data_path: artifacts/data_ingestion/winequality-red.csv

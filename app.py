@@ -3,7 +3,7 @@ import os
 import numpy as np
 import pandas as pd
 from DataExtractionAndNLP.pipeline.stage_01_data_ingestion import DataIngestionPipeline
-from src.DataExtractionAndNLP.pipeline.dataCleaning import DataCleaningPipeline
+from DataExtractionAndNLP.pipeline.stage_03_cleaning import DataCleaningPipeline
 from DataExtractionAndNLP.pipeline.stage_02_pre_cleaning import PreCleaningPipeline
 
 
