@@ -10,8 +10,7 @@ data_ingestion:
 
 
 post_cleaning:
-  # root_dir: artifacts/data_validation
-  unzip_data_dir: artifacts/data_ingestion/MasterDictionary
+  source_dir: artifacts/data_ingestion/MasterDictionary
   # STATUS_FILE: artifacts/data_validation/status.txt
 
 

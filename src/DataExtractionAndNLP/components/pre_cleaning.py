@@ -4,6 +4,8 @@ from nltk.tokenize import sent_tokenize, word_tokenize
 from nltk.corpus import cmudict
 import re
 from src.DataExtractionAndNLP.entity.config_entity import (DataIngestionConfig)
+from src.DataExtractionAndNLP.utils.common import get_name
+
 
 
 
@@ -14,13 +16,8 @@ class PreCleaning:
         self.config = config
 
     def calculate(self, data):
-        url=data[0]
-        Class_type=data[1]
-        Class_name=data[2]
+        filename = get_name(data)
         
-        sanitized_url = url.replace("/", "_").replace(":", "_")  # Sanitize URL
-        filename = f"{sanitized_url}_{Class_type}_{Class_name}.txt"
-
         output_file = os.path.join(self.config.root_dir, filename)
 
         with open(output_file, 'r', encoding='utf-8') as file:

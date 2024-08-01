@@ -139,5 +139,19 @@ def encodeImageIntoBase64(croppedImagePath):
         return base64.b64encode(f.read())
 
 
-
-
+@ensure_annotations
+def get_name(data: list) -> str:
+    """get filename in string
+    
+    Args:
+        data (list): user input
+        
+    Returns:
+        str: filename in string
+    """
+    url=data[0]
+    Class_type=data[1]
+    Class_name=data[2]    
+    sanitized_url = url.replace("/", "_").replace(":", "_")  # Sanitize URL
+    filename = f"{sanitized_url}_{Class_type}_{Class_name}.txt"
+    return filename
