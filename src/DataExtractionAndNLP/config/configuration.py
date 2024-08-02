@@ -1,22 +1,15 @@
 from src.DataExtractionAndNLP.constants import *
 from src.DataExtractionAndNLP.utils.common import read_yaml, create_directories
-from src.DataExtractionAndNLP.entity.config_entity import (DataIngestionConfig)
+from src.DataExtractionAndNLP.entity.config_entity import (DataIngestionConfig, PostCleaningConfig)
 
 class ConfigurationManager:
     def __init__(
         self,
-        config_filepath = CONFIG_FILE_PATH,
-        params_filepath = PARAMS_FILE_PATH):
-        # schema_filepath = SCHEMA_FILE_PATH):
-
+        config_filepath = CONFIG_FILE_PATH):
         self.config = read_yaml(config_filepath)
-        self.params = read_yaml(params_filepath)
-        # self.schema = read_yaml(schema_filepath)
-
         create_directories([self.config.artifacts_root])
 
-
-    
+  
     def get_data_ingestion_config(self) -> DataIngestionConfig:
         config = self.config.data_ingestion
 
@@ -31,3 +24,14 @@ class ConfigurationManager:
         )
 
         return data_ingestion_config
+    
+    def get_post_cleaning_config(self) -> PostCleaningConfig:
+        config = self.config.post_cleaning
+
+        post_cleaning_config = PostCleaningConfig(
+            root_dir=config.root_dir,
+            positive_file_path=config.positive_file_path,
+            negative_file_path=config.negative_file_path
+        )
+
+        return post_cleaning_config

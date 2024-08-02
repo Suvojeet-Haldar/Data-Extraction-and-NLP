@@ -9,9 +9,10 @@ data_ingestion:
   unzip_data_dir: artifacts/data_ingestion/MasterDictionary
 
 
-# data_transformation:
-#   root_dir: artifacts/data_transformation
-#   data_path: artifacts/data_ingestion/winequality-red.csv
+post_cleaning:
+  root_dir: artifacts/data_ingestion
+  positive_file_path: artifacts/data_ingestion/MasterDictionary/positive-words.txt
+  negative_file_path: artifacts/data_ingestion/MasterDictionary/negative-words.txt
 
 
 

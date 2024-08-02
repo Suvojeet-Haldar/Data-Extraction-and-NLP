@@ -2,7 +2,7 @@ from src.DataExtractionAndNLP import logger
 from src.DataExtractionAndNLP.pipeline.stage_01_data_ingestion import DataIngestionPipeline
 from src.DataExtractionAndNLP.pipeline.stage_02_pre_cleaning import PreCleaningPipeline
 from src.DataExtractionAndNLP.pipeline.stage_03_cleaning import CleaningPipeline
-# from DataExtractionAndNLP.pipeline.stage_04_evaluation import EvaluationPipeline
+from src.DataExtractionAndNLP.pipeline.stage_04_post_cleaning import PostCleaningPipeline
 
 # logger.info("Welcome to my custom log")
 
@@ -51,15 +51,13 @@ except Exception as e:
 
 
 
-
-# STAGE_NAME = "Evaluation stage"
-# try:
-#    logger.info(f"*******************")
-#    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
-#    model_evalution = EvaluationPipeline()
-#    model_evalution.main()
-#    logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
-
-# except Exception as e:
-#         logger.exception(e)
-#         raise e
+STAGE_NAME = "Post Cleaning stage"
+try: 
+   logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
+   post_cleaning = PostCleaningPipeline()
+   metrics = post_cleaning.main(metrics, data)
+   logger.info(f"{metrics}\n\nx==========x")
+   logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
+except Exception as e:
+        logger.exception(e)
+        raise e
