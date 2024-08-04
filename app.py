@@ -1,10 +1,8 @@
 from flask import Flask, render_template, request
-import os
-import numpy as np
-import pandas as pd
-from DataExtractionAndNLP.pipeline.stage_01_data_ingestion import DataIngestionPipeline
-from DataExtractionAndNLP.pipeline.stage_03_cleaning import DataCleaningPipeline
-from DataExtractionAndNLP.pipeline.stage_02_pre_cleaning import PreCleaningPipeline
+from src.DataExtractionAndNLP.pipeline.stage_01_data_ingestion import DataIngestionPipeline
+from src.DataExtractionAndNLP.pipeline.stage_02_pre_cleaning import PreCleaningPipeline
+from src.DataExtractionAndNLP.pipeline.stage_03_cleaning import CleaningPipeline
+from src.DataExtractionAndNLP.pipeline.stage_04_post_cleaning import PostCleaningPipeline
 
 
 app = Flask(__name__) # initializing a flask app
@@ -14,41 +12,29 @@ def homePage():
     return render_template("index.html")
 
 
-# @app.route('/train',methods=['GET']) #route to train the pipeline
-# def training():
-#     os.system("python main.py")
-#     return "Training Successful!"
-
-
 @app.route('/Extract&Analyse',methods=['POST','GET']) # route to show the predictions in a web UI
 def index():
     if request.method == 'POST':
         try:
             # reading the inputs given by the user
-            url =float(request.form['url'])
-            Class =float(request.form['class'])
-            # citric_acid =float(request.form['citric_acid'])
-            # residual_sugar =float(request.form['residual_sugar'])
-            # chlorides =float(request.form['chlorides'])
-            # free_sulfur_dioxide =float(request.form['free_sulfur_dioxide'])
-            # total_sulfur_dioxide =float(request.form['total_sulfur_dioxide'])
-            # density =float(request.form['density'])
-            # pH =float(request.form['pH'])
-            # sulphates =float(request.form['sulphates'])
-            # alcohol =float(request.form['alcohol'])
+            url = request.form['url']
+            Class_type = request.form['class_type']
+            Class_name = request.form['class_name']
+
+            data = [url, Class_type, Class_name]
+            data[2]=data[2].replace(" ", ".")
 
 
-            data = [url, Class]
-            # data = np.array(data).reshape(1, 2)
+            data_ingestion = DataIngestionPipeline()
+            data_ingestion.main(data)
+            pre_cleaning = PreCleaningPipeline()
+            metrics = pre_cleaning.main(data)
+            cleaning = CleaningPipeline()
+            cleaning.main(data)
+            post_cleaning = PostCleaningPipeline()
+            metrics = post_cleaning.main(metrics, data)
 
-            DataIngestionPipeline().ingest(data)
-            metrics = PreCleaningPipeline().calculate(data)
-            DataCleaningPipeline().clean(data, metrics)
-
-            # obj = DataIngestionPipeline()
-            predict = obj.ingest(data)
-
-            return render_template('results.html', prediction =str(predict))
+            return render_template('results.html', metrics = metrics)
         except Exception as e:
             print('The Exception message is: ',e)
             return f'something is wrong, {e}'

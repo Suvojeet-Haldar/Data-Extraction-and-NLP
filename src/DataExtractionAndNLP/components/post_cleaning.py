@@ -64,4 +64,8 @@ class PostCleaning:
 
             metrics.update({"positive_score": positive_score, "negative_score": negative_score, "polarity_score": polarity_score, "subjectivity_score": subjectivity_score, "word_count": word_count, "percentage_complex_words": percentage_complex_words, "fog_index": fog_index, "avg_words_per_sentence": avg_words_per_sentence})
 
+            # Removing the file just before returning the metrics for the final time to save space, this is optional
+            file.close()
+            os.remove(output_file)
+
             return metrics

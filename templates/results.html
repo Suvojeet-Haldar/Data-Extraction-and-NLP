@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Metrics</title>
+        <link rel="icon" type="image/x-icon" href="static/assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="static/css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="/">Home</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
+<!--                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>-->
+<!--                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>-->
+<!--                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="post.html">Sample Post</a></li>-->
+<!--                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li>-->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('static/assets/img/wine.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>Metrics</h1>
+                             <span class="subheading"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+<!-- Main Content-->
+<div class="container px-4 px-lg-5">
+
+    <!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Form-v9 by Colorlib</title>
+<!-- Mobile Specific Metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<!-- Font-->
+<link rel="stylesheet" type="text/css" href="static/css2/nunito-font.css">
+<!-- Main Style Css -->
+<link rel="stylesheet" href="static/css2/style.css"/>
+</head>
+<body class="form-v9">
+<div class="page-content">
+ <div class="form-v9-content" style="background-image: url('static/assets/img/form-v9.jpg')">
+    <ul class="lists">
+        <li class="sentimental_analysis"><big><b>Sentimental Analysis:</b></big> (The process of determining whether a piece of writing is positive, negative, or neutral)
+            <ul>
+                <li class="positive_score">
+                    <big><b>Positive Score = </b></big><big><b class="scores"> {{metrics['positive_score']}}</b></big> (This score is calculated by assigning the value of +1 for each word if found in the Positive Dictionary and then adding up all the values)
+                </li>
+                <li class="negative_score">
+                    <big><b>Negative Score = </b></big><big><b class="scores">{{metrics['negative_score']}} </b></big>(This score is calculated by assigning the value of -1 for each word if found in the Negative Dictionary and then adding up all the values. We multiply the score with -1 so that the score is a positive number)
+                </li>
+                <li class="polarity_score">
+                    <big><b>Polarity Score = </b></big><big><b class="scores">{{metrics['polarity_score']}} </b></big>(This score determines if a given text is positive or negative in nature. It is calculated by using the formula: (Positive Score – Negative Score)/ ((Positive Score + Negative Score) + 0.000001). Its Range is from -1 to +1 )
+                </li>
+                <li class="subjectivity_score">
+                    <big><b>Subjectivity Score = </b></big><big><b class="scores">{{metrics['subjectivity_score']}} </b></big>(This score determines if a given text is objective or subjective. It is calculated by using the formula: (Positive Score + Negative Score)/ ((Total Words after cleaning) + 0.000001). Its Range is from 0 to +1)
+                </li>
+            </ul>
+        </li>
+        <li class="analysis_of_readability"><big><b>Analysis of Readability: </b></big>(Calculated using the Gunning Fox index formula described below)
+            <ul>
+                <li class="avg_sentence_length">
+                    <big><b>Average Sentence Length = </b></big><big><b class="scores">{{metrics['avg_sentence_length']}} </b></big>(The number of words in the text/ The number of sentences in the text)
+                </li>
+                <li class="percentage_complex_words">
+                    <big><b>Percentage of Complex Words = </b></big><big><b class="scores">{{metrics['percentage_complex_words']}} </b></big>(The number of complex words / the number of words)
+                </li>
+                <li class="fog_index">
+                    <big><b>Fog Index = </b></big><big><b class="scores">{{metrics['fog_index']}} </b></big>(0.4 * (Average Sentence Length + Percentage of Complex words))
+                </li>
+            </ul>
+        </li>
+        <li class="avg_words_per_sentence">
+            <big><b>Average Words Per Sentence = </b></big><big><b class="scores">{{metrics['avg_words_per_sentence']}} </b></big>(The total number of words / the total number of sentences)
+        </li>
+        <li class="complex_word_count">
+            <big><b>Complex Word Count = </b></big><big><b class="scores">{{metrics['complex_word_count']}} </b></big>(Complex words are words in the text that contain more than two syllables)
+        </li>
+        <li class="word_count">
+            <big><b>Word Count = </b></big><big><b class="scores">{{metrics['word_count']}} </b></big>(We count the total cleaned words present in the text by removing the stop words (using stopwords class of nltk package), Removing any punctuations like ? ! , . from the word before counting)
+        </li>
+        <li class="syllable_count">
+            <big><b>Syllable Count = </b></big><big><b class="scores">{{metrics['syllable_count']}} </b></big>(We count the number of Syllables in each word of the text by counting the vowels present in each word. We also handle some exceptions like words ending with 'es','ed' by not counting them as a syllable.)
+        </li>
+        <li class="personal_pronouns_count">
+            <big><b>Personal Pronouns Count = </b></big><big><b class="scores">{{metrics['personal_pronouns_count']}} </b></big>(To calculate Personal Pronouns mentioned in the text, we use regex to find the counts of the words - “I,” “we,” “my,” “ours,” and “us”. Special care is taken so that the country name US is not included in the list)
+        </li>
+        <li class="avg_word_length">
+            <big><b>Average Word Length = </b></big><big><b class="scores">{{metrics['avg_word_length']}} </b></big>(It is calculated by the formula: Sum of the total number of characters in each word/Total number of words)
+        </li>
+    </ul>
+    
+    <!--div class="avg_sentence_length">
+        Average Sentence Length = {{metrics['avg_sentence_length']}}
+    </div>
+    <div class="syllable_count">
+        Syllable Count = {{metrics['syllable_count']}}
+    </div>
+    <div class="complex_word_count">
+        Complex Word Count = {{metrics['complex_word_count']}}
+    </div>
+    <div class="personal_pronouns_count">
+        Personal Pronouns Count = {{metrics['personal_pronouns_count']}}
+    </div>
+    <div class="avg_word_length">
+        Average Word Length = {{metrics['avg_word_length']}}
+    </div>
+    <div class="positive_score">
+        Positive Score = {{metrics['positive_score']}}
+    </div>
+    <div class="negative_score">
+        Negative Score = {{metrics['negative_score']}}
+    </div>
+    <div class="polarity_score">
+        Polarity Score = {{metrics['polarity_score']}}
+    </div>
+    <div class="subjectivity_score">
+        Subjectivity Score = {{metrics['subjectivity_score']}}
+    </div>
+    <div class="word_count">
+        Word Count = {{metrics['word_count']}}
+    </div>
+    <div class="percentage_complex_words">
+        Percentage of Complex Words = {{metrics['percentage_complex_words']}}
+    </div>
+    <div class="fog_index">
+        Fog Index = {{metrics['fog_index']}}
+    </div>
+    <div class="avg_words_per_sentence">
+        Average Words Per Sentence = {{metrics['avg_words_per_sentence']}}
+    </div!-->
+
+ </div>
+</div>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
+
+ </div>
+
+        <!-- Footer-->
+        <footer class="border-top">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <ul class="list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="https://www.linkedin.com/in/suvojeet-haldar-7b8a351aa/">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <!--li class="list-inline-item">
+                                <a href="https://www.youtube.com/dswithbappy">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li-->
+                            <li class="list-inline-item">
+                                <a href="https://github.com/Suvojeet-Haldar">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="small text-center text-muted fst-italic"></div>
+                        <div class="small text-center text-muted fst-italic"></div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="static/js/scripts.js"></script>
+    </body>
+</html>

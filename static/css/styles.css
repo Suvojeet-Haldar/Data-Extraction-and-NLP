@@ -10,6 +10,242 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
+ .avg_sentence_length, .complex_word_count, .syllable_count, .personal_pronouns_count, .avg_word_length, .positive_score, .negative_score, .polarity_score, .subjectivity_score, .word_count, .percentage_complex_words, .fog_index, .avg_words_per_sentence, .sentimental_analysis, .analysis_of_readability{
+  position: relative;
+  padding: 7.5px;
+}
+/* .avg_sentence_length:hover::before, .complex_word_count:hover::before, .syllable_count:hover::before, .personal_pronouns_count:hover::before, .avg_word_length:hover::before, .positive_score:hover::before, .negative_score:hover::before, .polarity_score:hover::before, .subjectivity_score:hover::before, .word_count:hover::before, .percentage_complex_words:hover::before, .fog_index:hover::before, .avg_words_per_sentence:hover::before, .sentimental_analysis:hover::before, .analysis_of_readability:hover::before{
+  opacity: 1;
+}
+.analysis_of_readability::before {
+  content: "Analysis of Readability is calculated using the Gunning Fox index formula described below.";
+  position: relative;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 3px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.sentimental_analysis::before {
+  content: "Sentimental analysis is the process of determining whether a piece of writing is positive, negative, or neutral.";
+  position: relative;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 3px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.avg_words_per_sentence::before {
+  content: "the total number of words / the total number of sentences";
+  position: relative;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 3px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.fog_index::before {
+  content: "0.4 * (Average Sentence Length + Percentage of Complex words)";
+  position: relative;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 3px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.percentage_complex_words::before {
+  content: "the number of complex words / the number of words";
+  position: relative;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 3px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.word_count::before {
+  content: "We count the total cleaned words present in the text by removing the stop words (using stopwords class of nltk package).removing any punctuations like ? ! , . from the word before counting.";
+  position: relative;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 3px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.subjectivity_score::before {
+  content: "This is the score that determines if a given text is objective or subjective. It is calculated by using the formula: Subjectivity Score = (Positive Score + Negative Score)/ ((Total Words after cleaning) + 0.000001) Range is from 0 to +1";
+  position: relative;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 3px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.polarity_score::before {
+  content: "This is the score that determines if a given text is positive or negative in nature. It is calculated by using the formula: Polarity Score = (Positive Score – Negative Score)/ ((Positive Score + Negative Score) + 0.000001) Range is from -1 to +1 ";
+  position: relative;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 3px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.negative_score::before {
+  content: "This score is calculated by assigning the value of -1 for each word if found in the Negative Dictionary and then adding up all the values. We multiply the score with -1 so that the score is a positive number.";
+  position: relative;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 3px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.positive_score::before {
+  content: "This score is calculated by assigning the value of +1 for each word if found in the Positive Dictionary and then adding up all the values.";
+  position: relative;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 3px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.avg_word_length::before {
+  content: "Average Word Length is calculated by the formula: Sum of the total number of characters in each word/Total number of words";
+  position: relative;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 3px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.avg_sentence_length::before {
+  content: "The number of words in the text/ The number of sentences in the text";
+  position: relative;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 3px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.personal_pronouns_count::before {
+  content: "To calculate Personal Pronouns mentioned in the text, we use regex to find the counts of the words - “I,” “we,” “my,” “ours,” and “us”. Special care is taken so that the country name US is not included in the list.";
+  position: relative;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 3px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.complex_word_count::before {
+  content: "Complex words are words in the text that contain more than two syllables";
+  position: relative;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 3px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.syllable_count::before {
+  content: "We count the number of Syllables in each word of the text by counting the vowels present in each word. We also handle some exceptions like words ending with 'es','ed' by not counting them as a syllable.";
+  position: relative;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 3px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+} */
+
+
+
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -60,14 +296,14 @@
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
   --bs-body-color: #212529;
-  --bs-body-bg: #fff;
+  --bs-body-bg: #41464b;
 }
 
-*,
+/* *,
 *::before,
 *::after {
   box-sizing: border-box;
-}
+} */
 
 @media (prefers-reduced-motion: no-preference) {
   :root {
@@ -348,7 +584,7 @@ textarea {
   margin: 0;
   font-family: inherit;
   font-size: inherit;
-  line-height: inherit;
+  /* line-height: inherit; */
 }
 
 button,
@@ -631,38 +867,37 @@ progress {
 .container-lg,
 .container-md,
 .container-sm {
-  width: 100%;
+  /* width: 100%; */
   padding-right: var(--bs-gutter-x, 0.75rem);
   padding-left: var(--bs-gutter-x, 0.75rem);
-  margin-right: auto;
-  margin-left: auto;
+  /* margin-right: auto;
+  margin-left: auto; */
 }
 
-@media (min-width: 576px) {
+/* @media (min-width: 576px) {
   .container-sm, .container {
-    max-width: 540px;
   }
-}
-@media (min-width: 768px) {
+} */
+/* @media (min-width: 768px) {
   .container-md, .container-sm, .container {
     max-width: 720px;
   }
-}
-@media (min-width: 992px) {
+} */
+/* @media (min-width: 992px) {
   .container-lg, .container-md, .container-sm, .container {
     max-width: 960px;
   }
-}
-@media (min-width: 1200px) {
+} */
+/* @media (min-width: 1200px) {
   .container-xl, .container-lg, .container-md, .container-sm, .container {
     max-width: 1140px;
   }
-}
-@media (min-width: 1400px) {
+} */
+/* @media (min-width: 1400px) {
   .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
     max-width: 1320px;
   }
-}
+} */
 .row {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
@@ -3984,7 +4219,12 @@ textarea.form-control-lg {
 .navbar-brand {
   padding-top: 0.3125rem;
   padding-bottom: 0.3125rem;
+  padding-left: 0.3125rem;
+  padding-right: 0.3125rem;
+  margin-left: 1rem;
   margin-right: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   font-size: 1.25rem;
   white-space: nowrap;
 }
@@ -5209,9 +5449,9 @@ textarea.form-control-lg {
   max-width: 100%;
   pointer-events: none;
 }
-.toast-container > :not(:last-child) {
+/* .toast-container > :not(:last-child) {
   margin-bottom: 0.75rem;
-}
+} */
 
 .toast-header {
   display: flex;
@@ -6552,9 +6792,10 @@ textarea.form-control-lg {
   border: 0 !important;
 }
 
-.border-top {
+/* .border-top {
   border-top: 1px solid #dee2e6 !important;
-}
+  
+} */
 
 .border-top-0 {
   border-top: 0 !important;
@@ -7155,8 +7396,8 @@ textarea.form-control-lg {
 }
 
 .px-4 {
-  padding-right: 1.5rem !important;
-  padding-left: 1.5rem !important;
+  padding-right: 0rem !important;
+  padding-left: 0rem !important;
 }
 
 .px-5 {
@@ -9483,8 +9724,8 @@ textarea.form-control-lg {
   }
 
   .px-lg-5 {
-    padding-right: 3rem !important;
-    padding-left: 3rem !important;
+    padding-right: 0rem !important;
+    padding-left: 0rem !important;
   }
 
   .py-lg-0 {
@@ -11108,13 +11349,12 @@ footer {
 
 header.masthead {
   position: relative;
-  margin-bottom: 3rem;
-  padding-top: calc(8rem + 57px);
-  padding-bottom: 8rem;
+  margin-bottom: 0rem;
   background: no-repeat center center;
   background-color: #6c757d;
   background-size: cover;
   background-attachment: scroll;
+  min-height: 100px;
 }
 header.masthead:before {
   content: "";
@@ -11123,22 +11363,25 @@ header.masthead:before {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #212529;
-  opacity: 0.5;
+  background-color: #41464b;
+  min-height: 100px;
 }
 header.masthead .page-heading,
 header.masthead .post-heading,
 header.masthead .site-heading {
   color: #fff;
+  min-height: 100px;
 }
 header.masthead .page-heading,
 header.masthead .site-heading {
   text-align: center;
+  min-height: 100px;
 }
 header.masthead .page-heading h1, header.masthead .page-heading .h1,
 header.masthead .site-heading h1,
 header.masthead .site-heading .h1 {
   font-size: 3rem;
+  min-height: 100px;
 }
 header.masthead .page-heading .subheading,
 header.masthead .site-heading .subheading {
@@ -11146,8 +11389,9 @@ header.masthead .site-heading .subheading {
   font-weight: 300;
   line-height: 1.1;
   display: block;
-  margin-top: 0.625rem;
+  margin-top: 1rem;
   font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  min-height: 100px;
 }
 header.masthead .post-heading h1, header.masthead .post-heading .h1 {
   font-size: 2.25rem;
@@ -11174,8 +11418,8 @@ header.masthead .post-heading .meta a {
 }
 @media (min-width: 992px) {
   header.masthead {
-    padding-top: 12.5rem;
-    padding-bottom: 12.5rem;
+    padding-top: 3rem;
+    padding-bottom: 0rem;
   }
   header.masthead .page-heading h1, header.masthead .page-heading .h1,
 header.masthead .site-heading h1,
@@ -11193,7 +11437,7 @@ header.masthead .site-heading .h1 {
 .section-heading {
   font-size: 2.25rem;
   font-weight: 700;
-  margin-top: 3.75rem;
+  margin-top: 4rem;
 }
 
 .caption {
