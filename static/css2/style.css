@@ -31,7 +31,7 @@ body {
 	font-family: 'Nunito', sans-serif;
 	color: #fff;
 	/* font-weight: 700; */
-	font-size: 16px;
+	/* font-size: 16px; */
 	position: relative;
 }
 .lists  {
@@ -43,9 +43,89 @@ body {
 	color: #ccff00;
 	/* opacity: 0.7; */
 }
+@media (min-width: 640px) {
+    .boxes {
+        margin: -12px;
+        width: calc(100% + 24px);
+    }
+}
+.boxes {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0px;
+}
+@media (min-width: 1024px) {
+    .box {
+        width: 33.3%;
+        padding: 12px;
+    }
+}
+.box {
+    display: flex;
+}
+.box_in {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+.box_in_2 {
+    display: flex;
+    position: relative;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    cursor: pointer;
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    /* font-weight: 700; */
+    font-size: 16px;
+    line-height: 24px;
+    color: #fff;
+    user-select: none;
+    outline: none;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.2);
+}
+.box_in_3 {
+    position: relative;
+    padding: 16px 56px 16px 64px;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+}
+.description {
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #fff;
+    position: absolute;
+    pointer-events: none;
+    text-align: left;
+    left: 65px;
+    right: 57px;
+    margin: 7.5px;
+    top: 41px;
+}
 .form-v9-content .form-detail {
     padding: 30px 30px 30px 30px;
 	position: relative;
+	/* display: flex; */
+}
+.boxes {
+    /* padding: 30px 30px 30px 30px;
+	position: relative; */
+	display: flex;
+}
+@media (min-width: 640px) {
+    .eWDSCD {
+        margin: -12px;
+        width: calc(100% + 24px);
+    }
 }
 .form-v9-content .form-detail h2 {
 	font-size: 35px;
@@ -95,6 +175,21 @@ body {
 	margin-bottom: 22px;
 	text-align: center;
 	width: 250px; 
+    /* margin: 0 auto; */
+	/* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+}
+.textarea {
+	margin-top: 22px;
+	margin-bottom: 22px;
+	text-align: center;
+	/* width: 250px;  */
+	/* resize: none;  */
+	background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid #ccc;
+	/* border: none; */
     /* margin: 0 auto; */
 	/* position: absolute;
     top: 50%;
@@ -181,6 +276,39 @@ input:-moz-placeholder { /* Firefox 18- */
   text-align: center;
 }
 
+textarea::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #e5e5e5;
+  font-size: 50px;
+  text-align: center;
+  /* width: 400px;
+  height: 50px; */
+  padding: 150px 0;
+}
+textarea::-moz-placeholder { /* Firefox 19+ */
+  color: #e5e5e5;
+  font-size: 50px;
+  text-align: center;
+  /* width: 400px;
+  height: 50px; */
+  padding: 150px 0;
+}
+textarea:-ms-input-placeholder { /* IE 10+ */
+  color: #e5e5e5;
+  font-size: 50px;
+  text-align: center;
+  /* width: 400px;
+  height: 50px; */
+  padding: 150px 0;
+}
+textarea:-moz-placeholder { /* Firefox 18- */
+  color: #e5e5e5;
+  font-size: 50px;
+  text-align: center;
+  /* width: 400px;
+  height: 50px; */
+  padding: 150px 0;
+}
+
 input.centered-input {
     width: 200px; /* Adjust as needed */
     margin: 0 auto;
@@ -217,4 +345,10 @@ input.centered-input {
 	.form-v9-content .form-detail {
 	    padding: 30px 45px 30px 10px;
 	}
+}
+@media (min-width: 1024px) {
+    .form-row-last {
+        /* width: 33.3%; */
+        padding: 12px;
+    }
 }

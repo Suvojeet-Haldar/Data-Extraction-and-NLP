@@ -67,32 +67,33 @@
 <body class="form-v9">
 	<div class="page-content">
 		<div class="form-v9-content" style="background-image: url('static/assets/img/form-v9.jpg')">
-			
-            <ul class="form-detail boxes">
-                <li class="form-row-last">
-                    <div class="box_in">
-                        <a class="box_in_2" href="/extractAndAnalyse.html">
-                            <div tabindex="-1" class="box_in_3">
-                                <big><b>Extract & Analyse</b></big>
-                            </div>
-                        </a>
-                        <br>
-                        <p class="description">Extract text from html elements and analyse</p>
-                    </div>
-                </li>
-                <li class="form-row-last">
-                    <div class="box_in">
-                        <a class="box_in_2" href="/pasteAndAnalyse.html">
-                            <div tabindex="-1" class="box_in_3">
-                                <big><b>Paste & Analyse</b></big>
-                            </div>
-                        </a>
-                        <br>
-                        <p class="description">Paste and analyse your text</p>
-                    </div>
-                </li>
-            </ul>
-            
+			<form class="form-detail" action="/Extract&Analyse" method="post">
+				<!--h2>Please Fill The Information</h2!-->
+				<!--div class="form-row-total"!-->
+
+					<div class="form-row-last">
+                        <!--label for="url"> URL:</label!-->
+						<input type="text" name="url" id="url" class="input-text" placeholder="URL" required>
+					</div>
+
+					<div class="form-row-last">
+                        <!--label for="class_type"> Class Type:</label!-->
+						<input type="text" name="class_type" id="class_type" class="input-text" placeholder="Tag Type" required>
+					</div>
+
+                    <div class="form-row-last">
+                        <!--label for="class_name"> Class Name:</label!-->
+						<input type="text" name="class_name" id="class_name" class="input-text" placeholder="Class Name" required>
+					</div>
+
+				<!--/div!-->
+
+
+				
+				<div class="form-row-last">
+					<input type="submit" name="register" class="register" value="Extract & Analyse">
+				</div>
+			</form>
 		</div>
 	</div>
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->

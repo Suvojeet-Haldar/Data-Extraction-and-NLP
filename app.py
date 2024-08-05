@@ -11,6 +11,9 @@ app = Flask(__name__) # initializing a flask app
 def homePage():
     return render_template("index.html")
 
+@app.route('/extractAndAnalyse.html',methods=['GET'], endpoint='extractAndAnalysePage') # route to display the home page
+def extractAndAnalysePage():
+    return render_template("extractAndAnalyse.html")
 
 @app.route('/Extract&Analyse',methods=['POST','GET']) # route to show the predictions in a web UI
 def index():
@@ -27,10 +30,44 @@ def index():
 
             data_ingestion = DataIngestionPipeline()
             data_ingestion.main(data)
+
             pre_cleaning = PreCleaningPipeline()
             metrics = pre_cleaning.main(data)
+
             cleaning = CleaningPipeline()
             cleaning.main(data)
+            
+            post_cleaning = PostCleaningPipeline()
+            metrics = post_cleaning.main(metrics, data)
+
+            return render_template('results.html', metrics = metrics)
+        except Exception as e:
+            print('The Exception message is: ',e)
+            return f'something is wrong, {e}'
+    else:
+        return render_template('index.html')
+
+
+@app.route('/pasteAndAnalyse.html',methods=['GET'], endpoint='pasteAndAnalysePage') # route to display the home page
+def pasteAndAnalysePage():
+    return render_template("pasteAndAnalyse.html")
+
+@app.route('/Analyse',methods=['POST','GET']) # route to show the predictions in a web UI
+def analyse():
+    if request.method == 'POST':
+        try:
+            # reading the inputs given by the user
+            data = request.form['text']
+
+            data_ingestion = DataIngestionPipeline()
+            data_ingestion.main(data)
+
+            pre_cleaning = PreCleaningPipeline()
+            metrics = pre_cleaning.main(data)
+
+            cleaning = CleaningPipeline()
+            cleaning.main(data)
+
             post_cleaning = PostCleaningPipeline()
             metrics = post_cleaning.main(metrics, data)
 

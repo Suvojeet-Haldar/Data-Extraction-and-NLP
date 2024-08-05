@@ -7,6 +7,9 @@ window.addEventListener('DOMContentLoaded', () => {
     let scrollPos = 0;
     const mainNav = document.getElementById('mainNav');
     const headerHeight = mainNav.clientHeight;
+    const textarea = document.querySelector('.textarea');
+    textarea.focus(); // Set focus to the textarea
+    textarea.setSelectionRange(10000, 100000); // Place cursor at the start
     window.addEventListener('scroll', function() {
         const currentTop = document.body.getBoundingClientRect().top * -1;
         if ( currentTop < scrollPos) {

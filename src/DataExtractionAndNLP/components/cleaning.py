@@ -12,12 +12,16 @@ class Cleaning:
         self.config = config
 
     def clean(self, data):
-        filename = get_name(data)
+        if isinstance(data, list):
+            filename = get_name(data)
+            
+            output_file = os.path.join(self.config.root_dir, filename)
 
-        output_file = os.path.join(self.config.root_dir, filename)
-
-        with open(output_file, 'r', encoding='utf-8') as file:
-            text = file.read()
+            with open(output_file, 'r', encoding='utf-8') as file:
+                text = file.read()
+        else:
+            text = data
+            output_file = os.path.join(self.config.root_dir, "pasted_text.txt")
 
         # Remove all punctuation marks
         text = re.sub(r'[^\w\s]', '', text)

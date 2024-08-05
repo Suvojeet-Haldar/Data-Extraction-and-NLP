@@ -10,6 +10,7 @@ class PreCleaningPipeline:
         pass
 
     def main(self, data):
+        logger.info("Inside pre cleaning main pipeline")
         config = ConfigurationManager()
         data_ingestion_config = config.get_data_ingestion_config()
         pre_cleaning = PreCleaning(config=data_ingestion_config)

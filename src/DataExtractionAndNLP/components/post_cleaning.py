@@ -29,7 +29,11 @@ class PostCleaning:
 
 
     def calculate(self, metrics, data, positive_set, negative_set):
-        filename = get_name(data)
+        if isinstance(data, list):
+            filename = get_name(data)
+        else:
+            filename = "pasted_text.txt"
+            
         output_file = os.path.join(self.config.root_dir, filename)
 
         with open(output_file, 'r', encoding='utf-8') as file:
