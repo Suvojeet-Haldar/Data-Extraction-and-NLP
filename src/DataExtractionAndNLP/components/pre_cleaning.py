@@ -5,6 +5,8 @@ from nltk.corpus import cmudict
 import re
 from src.DataExtractionAndNLP.entity.config_entity import (DataIngestionConfig)
 from src.DataExtractionAndNLP.utils.common import get_name
+import nltk
+
 
 
 
@@ -17,6 +19,12 @@ class PreCleaning:
 
     def calculate(self, data):
         logger.info("Inside calculate function (pre-cleaning component)")
+
+        try:
+            nltk.data.find('tokenizers/punkt')
+        except LookupError:
+            nltk.download('punkt')
+
         if isinstance(data, list):
             filename = get_name(data)
             
