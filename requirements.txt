@@ -6,7 +6,7 @@
 certifi
 charset-normalizer
 --index-url https://pypi.org/project/click/ click
-colorama
+--index-url https://pypi.org/project/colorama/ colorama
 comm
 debugpy
 decorator
