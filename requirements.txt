@@ -8,7 +8,7 @@ charset-normalizer
 --index-url https://pypi.org/project/click/ click
 --index-url https://pypi.org/project/colorama/ colorama
 --index-url https://pypi.org/project/comm/ comm
-debugpy
+--index-url https://pypi.org/project/debugpy/ debugpy
 decorator
 ensure==1.0.4
 exceptiongroup
