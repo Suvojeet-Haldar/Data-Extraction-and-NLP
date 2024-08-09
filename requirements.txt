@@ -1,4 +1,4 @@
-asttokens
+--index-url https://pypi.org/simple asttokens
 beautifulsoup4
 blinker
 Bottleneck
