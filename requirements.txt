@@ -5,7 +5,7 @@
 --index-url git+https://github.com/google/brotli Brotli
 certifi
 charset-normalizer
-click
+--index-url https://pypi.org/project/click/ click
 colorama
 comm
 debugpy
