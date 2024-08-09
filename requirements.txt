@@ -27,7 +27,7 @@ jupyter_core
 MarkupSafe
 matplotlib-inline
 --index-url https://pypi.anaconda.org/intel/simple --extra-index-url https://pypi.org/simple mkl_fft
---index-url https://pypi.anaconda.org/intel/simple -extra-index-url https://pypi.org/simple mkl_randommkl-service==2.4.0
+--i https://pypi.anaconda.org/intel/simple mkl_randommkl-service==2.4.0
 nest_asyncio
 nltk==3.8.1
 numexpr
