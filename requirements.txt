@@ -1,5 +1,5 @@
 --index-url https://pypi.org/simple asttokens
-beautifulsoup4
+--index-url https://pypi.org/simple beautifulsoup4
 blinker
 Bottleneck
 Brotli
