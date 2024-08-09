@@ -44,6 +44,7 @@ Flask
 --index-url https://pypi.org/simple Pygments
 --index-url https://pypi.org/simple PySocks
 --index-url https://pypi.org/simple python-box
+python-box
 --index-url https://pypi.org/simple python-dateutil
 --index-url https://pypi.org/simple pytz
 --index-url https://pypi.org/simple pywin32==305.1
