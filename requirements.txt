@@ -1,75 +1,71 @@
---index-url https://pypi.org/simple asttokens
---index-url https://pypi.org/simple beautifulsoup4
---index-url https://pypi.org/simple blinker
---index-url https://pypi.org/simple Bottleneck
---index-url https://pypi.org/simple Brotli
---index-url https://pypi.org/simple certifi
---index-url https://pypi.org/simple charset-normalizer
---index-url https://pypi.org/simple click
---index-url https://pypi.org/simple colorama
---index-url https://pypi.org/simple comm
---index-url https://pypi.org/simple debugpy
---index-url https://pypi.org/simple decorator
---index-url https://pypi.org/simple ensure==1.0.4
---index-url https://pypi.org/simple exceptiongroup
---index-url https://pypi.org/simple executing
---index-url https://pypi.org/simple Flask
+asttokens
+beautifulsoup4
+blinker
+Bottleneck
+Brotli
+certifi
+charset-normalizer
+click
+colorama
+comm
+debugpy
+decorator
+ensure==1.0.4
+exceptiongroup
+executing
 Flask
---index-url https://pypi.org/simple idna
---index-url https://pypi.org/simple importlib_metadata
---index-url https://pypi.org/simple ipykernel
---index-url https://pypi.org/simple ipython
---index-url https://pypi.org/simple itsdangerous
---index-url https://pypi.org/simple jedi
---index-url https://pypi.org/simple Jinja2
---index-url https://pypi.org/simple 
+idna
+importlib_metadata
+ipykernel
+ipython
+itsdangerous
+jedi
+Jinja2
 joblib
---index-url https://pypi.org/simple jupyter_client
---index-url https://pypi.org/simple jupyter_core
---index-url https://pypi.org/simple MarkupSafe
---index-url https://pypi.org/simple matplotlib-inline
+jupyter_client
+jupyter_core
+MarkupSafe
+matplotlib-inline
 --index-url https://pypi.anaconda.org/intel/simple --extra-index-url https://pypi.org/simple mkl_fft
 --i https://pypi.anaconda.org/intel/simple mkl_randommkl-service==2.4.0
---index-url https://pypi.org/simple nest_asyncio
---index-url https://pypi.org/simple nltk==3.8.1
---index-url https://pypi.org/simple numexpr
---index-url https://pypi.org/simple numpy
---index-url https://pypi.org/simple packaging
---index-url https://pypi.org/simple pandas
---index-url https://pypi.org/simple parso
---index-url https://pypi.org/simple pickleshare
---index-url https://pypi.org/simple platformdirs
---index-url https://pypi.org/simple prompt_toolkit
---index-url https://pypi.org/simple psutil
---index-url https://pypi.org/simple pure_eval
---index-url https://pypi.org/simple Pygments
---index-url https://pypi.org/simple PySocks
---index-url https://pypi.org/simple python-box
+nest_asyncio
+nltk==3.8.1
+numexpr
+numpy
+packaging
+pandas
+parso
+pickleshare
+platformdirs
+prompt_toolkit
+psutil
+pure_eval
+Pygments
+PySocks
 python-box
---index-url https://pypi.org/simple python-dateutil
---index-url https://pypi.org/simple pytz
---index-url https://pypi.org/simple pywin32==305.1
---index-url https://pypi.org/simple 
+python-dateutil
+pytz
+pywin32==305.1
 PyYAML
---index-url https://pypi.org/simple pyzmq
---index-url https://pypi.org/simple regex==2024.7.24
---index-url https://pypi.org/simple requests
---index-url https://pypi.org/simple ruamel.yaml
---index-url https://pypi.org/simple setuptools==69.5.1
---index-url https://pypi.org/simple six
---index-url https://pypi.org/simple soupsieve
---index-url https://pypi.org/simple stack-data
---index-url https://pypi.org/simple toml
---index-url https://pypi.org/simple tornado
---index-url https://pypi.org/simple tqdm==4.66.4
---index-url https://pypi.org/simple traitlets
---index-url https://pypi.org/simple typing_extensions
---index-url https://pypi.org/simple tzdata
---index-url https://pypi.org/simple urllib3
---index-url https://pypi.org/simple wcwidth
---index-url https://pypi.org/simple Werkzeug
---index-url https://pypi.org/simple wheel==0.43.0
---index-url https://pypi.org/simple win-inet-pton
---index-url https://pypi.org/simple zipp
+pyzmq
+regex==2024.7.24
+requests
+ruamel.yaml
+setuptools==69.5.1
+six
+soupsieve
+stack-data
+toml
+tornado
+tqdm==4.66.4
+traitlets
+typing_extensions
+tzdata
+urllib3
+wcwidth
+Werkzeug
+wheel==0.43.0
+win-inet-pton
+zipp
 -e .
 gunicorn
