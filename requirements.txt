@@ -22,7 +22,8 @@ Flask
 --index-url https://pypi.org/simple itsdangerous
 --index-url https://pypi.org/simple jedi
 --index-url https://pypi.org/simple Jinja2
---index-url https://pypi.org/simple joblib
+--index-url https://pypi.org/simple 
+joblib
 --index-url https://pypi.org/simple jupyter_client
 --index-url https://pypi.org/simple jupyter_core
 --index-url https://pypi.org/simple MarkupSafe
