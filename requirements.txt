@@ -1,7 +1,7 @@
 --index-url https://pypi.org/simple asttokens
 --index-url https://pypi.org/simple beautifulsoup4
 --index-url https://pypi.org/simple blinker
-Bottleneck
+--index-url https://pypi.org/simple Bottleneck
 Brotli
 certifi
 charset-normalizer
