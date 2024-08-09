@@ -50,6 +50,7 @@ PyYAML
 --index-url https://pypi.org/simple pyzmq
 --index-url https://pypi.org/simple regex==2024.7.24
 --index-url https://pypi.org/simple requests
+requests
 --index-url https://pypi.org/simple ruamel.yaml
 --index-url https://pypi.org/simple setuptools==69.5.1
 --index-url https://pypi.org/simple six
