@@ -30,6 +30,11 @@ class PreCleaning:
         except LookupError:
             nltk.download('cmudict')
 
+        try:
+            nltk.data.find('corpora/stopwords')
+        except LookupError:
+            nltk.download('stopwords')
+
         if isinstance(data, list):
             filename = get_name(data)
             
