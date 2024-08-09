@@ -1,4 +1,4 @@
-asttokens @ file:///home/conda/feedstock_root/build_artifacts/asttokens_1698341106958/work
+# asttokens @ file:///home/conda/feedstock_root/build_artifacts/asttokens_1698341106958/work
 beautifulsoup4 @ file:///C:/b/abs_d5wytg_p0w/croot/beautifulsoup4-split_1718029833749/work
 blinker @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/blinker_1699474692786/work
 Bottleneck @ file:///C:/b/abs_f7un855idq/croot/bottleneck_1709069969633/work
