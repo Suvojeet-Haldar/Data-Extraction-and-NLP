@@ -26,7 +26,8 @@ jupyter_client
 jupyter_core
 MarkupSafe
 matplotlib-inline
-mkl-fft
+--index-url https://pypi.anaconda.org/intel/simple --extra-index-url https://pypi.org/simple 
+mkl_fft
 mkl-random
 mkl-service==2.4.0
 nest_asyncio
