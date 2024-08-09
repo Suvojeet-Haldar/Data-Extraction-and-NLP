@@ -14,6 +14,7 @@
 --index-url https://pypi.org/simple exceptiongroup
 --index-url https://pypi.org/simple executing
 --index-url https://pypi.org/simple Flask
+Flask
 --index-url https://pypi.org/simple idna
 --index-url https://pypi.org/simple importlib_metadata
 --index-url https://pypi.org/simple ipykernel
