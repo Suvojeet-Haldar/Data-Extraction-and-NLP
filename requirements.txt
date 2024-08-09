@@ -30,7 +30,8 @@ joblib
 --index-url https://pypi.anaconda.org/intel/simple --extra-index-url https://pypi.org/simple mkl_fft
 --i https://pypi.anaconda.org/intel/simple mkl_randommkl-service==2.4.0
 --index-url https://pypi.org/simple nest_asyncio
---index-url https://pypi.org/simple nltk==3.8.1
+--index-url https://pypi.org/simple 
+nltk==3.8.1
 --index-url https://pypi.org/simple numexpr
 --index-url https://pypi.org/simple numpy
 --index-url https://pypi.org/simple packaging
