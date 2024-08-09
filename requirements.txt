@@ -48,7 +48,8 @@ python-box
 --index-url https://pypi.org/simple python-dateutil
 --index-url https://pypi.org/simple pytz
 --index-url https://pypi.org/simple pywin32==305.1
---index-url https://pypi.org/simple PyYAML
+--index-url https://pypi.org/simple 
+PyYAML
 --index-url https://pypi.org/simple pyzmq
 --index-url https://pypi.org/simple regex==2024.7.24
 --index-url https://pypi.org/simple requests
