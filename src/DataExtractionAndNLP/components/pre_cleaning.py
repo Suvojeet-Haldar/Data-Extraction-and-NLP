@@ -25,6 +25,11 @@ class PreCleaning:
         except LookupError:
             nltk.download('punkt')
 
+        try:
+            nltk.data.find('corpora/cmudict')
+        except LookupError:
+            nltk.download('cmudict')
+
         if isinstance(data, list):
             filename = get_name(data)
             
